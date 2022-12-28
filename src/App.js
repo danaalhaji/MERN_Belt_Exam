@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Create from './views/Create';
+import Display from './views/Display';
+import DisplayChoose from './views/DisplayChoose';
+import { Router } from '@reach/router';
+import Show from './component/Show';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Countries Competition</h1>
+      <Router>
+        <Create path="/contsest/new"></Create>
+        <Display path="/"></Display>
+        <DisplayChoose path="/choose/:id"></DisplayChoose>
+        <Show path="/contest/:id"></Show>
+      </Router>
     </div>
   );
 }
